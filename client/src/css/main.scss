@@ -1,0 +1,125 @@
+$body_color: #2e529a;
+
+html, body {
+  -webkit-text-size-adjust: none;    /* This is attempting to not have the text change on a mobile device */
+  min-width: 100%;
+  color: $body_color;
+  /*
+  background-color:#F9F9F9;
+  background-image:url("images/squairs_icon_opaque.png");
+  background-attachment: fixed;
+  background-position:center center;
+  background-repeat:no-repeat;
+  */
+}
+
+#upload-images-wrapper {
+  min-height: 400px;
+
+  #file-uploader {
+    display: none;
+  }
+}
+
+.padding-tiny {
+  padding: 3px;
+}
+
+.padding-small {
+  padding: 5px;
+}
+
+.padding-medium {
+  padding: 15px;
+}
+
+.padding-large {
+  padding: 30px;
+}
+
+.margin-small {
+  margin: 5px;
+}
+
+.margin-medium {
+  margin: 15px;
+}
+
+.margin-large {
+  margin: 30px;
+}
+
+.margin-left-small {
+  margin-left: 5px;
+}
+
+.margin-right-small {
+  margin-right: 5px;
+}
+
+.margin-bottom-small {
+  margin-bottom: 5px;
+}
+
+.margin-bottom-medium {
+  margin-bottom: 15px;
+}
+
+.margin-bottom-large {
+  margin-bottom: 30px;
+}
+
+.margin-top-small {
+  margin-top: 5px;
+}
+
+.margin-top-medium {
+  margin-top: 15px;
+}
+
+.margin-top-large {
+  margin-top: 30px;
+}
+
+.margin-top-xlarge {
+  margin-top: 50px;
+}
+
+.separate-vert-small {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.separate-vert-medium {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.separate-vert-large {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.text-large {
+  font-size: 1.5em;
+}
+
+.text-xlarge {
+  font-size: 1.75em;
+}
+
+.text-xxlarge {
+  font-size: 3em;
+}
+
+.text-xxxlarge {
+  font-size: 5em;
+}
+
+.text-small {
+  font-size: 0.8em;
+}
+
+.text-tiny {
+  font-size: 0.5em;
+}

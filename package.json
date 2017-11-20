@@ -1,0 +1,63 @@
+{
+  "name": "picfont-app",
+  "version": "0.1.0",
+  "description": "App to wrap and prototype the picfont library..",
+  "main": "forever.js",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whatl3y/picfont-app.git"
+  },
+  "scripts": {
+    "dev": "nodemon --exec 'nf start'",
+    "start": "node forever",
+    "postinstall": "gulp build",
+    "test": "mocha --compilers js:babel-core/register --recursive './src/**/*.spec.js'"
+  },
+  "devDependencies": {
+    "fetch-defaults": "^1.0.0",
+    "foreman": "^2.0.0",
+    "mocha": "^3.1.1",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "dependencies": {
+    "@slack/client": "^3.13.0",
+    "async": "^2.6.0",
+    "aws-sdk": "^2.107.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "body-parser": "^1.12.0",
+    "bootstrap": "^4.0.0-alpha.6",
+    "bunyan": "1.5.1",
+    "exif": "^0.6.0",
+    "express": "^4.15.2",
+    "express-formidable": "^0.1.2",
+    "forever-monitor": "^1.7.1",
+    "gulp": "latest",
+    "gulp-babel": "latest",
+    "gulp-concat": "^2.6.0",
+    "gulp-plumber": "^1.1.0",
+    "image-type": "^3.0.0",
+    "minimist": "^1.2.0",
+    "moment": "^2.18.1",
+    "newrelic": "^1.40.0",
+    "pajk-lwip": "^0.2.0",
+    "pg": "^6.1.5",
+    "pg-query-stream": "^1.0.0",
+    "picfont": "git+https://github.com/whatl3y/picfont.git",
+    "pug": "^2.0.0-rc.3",
+    "redis": "^2.8.0",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.5",
+    "socket.io": "^1.7.3",
+    "throng": "^4.0.0",
+    "uuid": "^3.1.0",
+    "webfonts-generator": "git+https://github.com/whatl3y/webfonts-generator.git"
+  },
+  "author": "Lance Whatley",
+  "license": "MIT"
+}
