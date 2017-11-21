@@ -55,8 +55,7 @@
     "request-promise-native": "^1.0.5",
     "socket.io": "^1.7.3",
     "throng": "^4.0.0",
-    "uuid": "^3.1.0",
-    "webfonts-generator": "git+https://github.com/whatl3y/webfonts-generator.git"
+    "uuid": "^3.1.0"
   },
   "author": "Lance Whatley",
   "license": "MIT"

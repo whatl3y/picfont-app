@@ -1,6 +1,6 @@
 <template lang="pug">
   div.text-center
-    div#upload-images-wrapper.d-flex.flex-column.justify-content-center.align-items-stretch
+    div#upload-images-wrapper.d-flex.flex-column.align-items-stretch
       h1 picfont in action
       div(v-if="isLoading")
         loader
@@ -28,6 +28,8 @@
     data() {
       return {
         isLoading: false,
+        newHtml: null,
+        newCss: null,
         images: [],
         finalImages: []
       }
@@ -62,14 +64,6 @@
           SimpleFileUploader.startUpload({
             url: `/api/upload`,
             concurrency: 2,
-            // onProgress: function(file) {
-            //   // file contains a File object
-            //   console.log(file)
-            // },
-            // onUploadSuccess: function(file) {
-            //     // file contains a File object
-            //     console.log(file);
-            // },
             onCompleted: (file, responseText, status) => {
               if (status >= 400)
                 return reject(responseText)
@@ -86,7 +80,10 @@
           this.isLoading = true
 
           await this.uploadImages()
-          await Api.createFont(this.finalImages)
+          const newFontInfo = await Api.createFont(this.finalImages)
+          this.newHtml = `${location.protocol}//${location.hostname}:${location.port}/file/s3/${newFontInfo.html}`
+          this.newCss = `${location.protocol}//${location.hostname}:${location.port}/file/s3/${newFontInfo.css}`
+          window.open(this.newHtml)
 
           this.isLoading = false
 

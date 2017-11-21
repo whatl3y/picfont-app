@@ -10,33 +10,20 @@
       padding: 10px 20px;
     }
 
-    .preview {
-      line-height: 2em;
-    }
-
-    .preview__icon {
-      display: inline-block;
-      width: 32px;
-      text-align: center;
-    }
-
-    {{baseSelector}} {
-      display: inline-block;
-      font-size: 16px;
-    }
-
     {{{styles}}}
   </style>
 </head>
 <body>
-  <h1>{{fontName}}</h1>
+  <h3>{{fontName}}</h3>
+  <ul>
   {{#each names}}
-  <div class="preview">
-    <span class="preview__icon">
-      <span class="{{removePeriods ../baseSelector}} {{../classPrefix}}{{this}}"></span>
-    </span>
-    <span>{{this}}</span>
-  </div>
+    <li>
+      <div class="preview">
+        <div>.{{../classPrefix}}{{this}}</div>
+        <div><i class="{{../classPrefix}}{{this}}"></i></div>
+      </div>
+    </li>
   {{/each}}
+  </ul>
 </body>
 </html>

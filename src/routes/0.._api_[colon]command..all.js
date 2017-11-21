@@ -54,16 +54,17 @@ export default async function Api(req, res) {
         )
 
         const fontFileData = await PicturesToFont(pictureBuffers, {
+          types: [ 'woff2', 'woff', 'eot', 'svg', 'ttf' ],
           fontName: `iconfont_${myUuid}`,
-          cssTemplate: `./templates/scss.hbs`,
+          cssTemplate: `./templates/css.hbs`,
           htmlTemplate: `./templates/html.hbs`
         })
 
         const uploadedFontFileData = await Promise.all(
           Object.keys(fontFileData).map(async key => {
             if (fontFileData[key] instanceof Buffer) {
-              const newFileName = Potrace.getFileName(`font.${key}`, myUuid)
-              await s3.writeFile({ filename: newFileName, data: fontFileData[key] })
+              const newFileName = Potrace.getFileName(`iconfont.${key}`, myUuid)
+              await s3.writeFile({ filename: newFileName, data: fontFileData[key], exact_filename: true })
               return { [key]: newFileName}
             }
             return null
@@ -72,7 +73,6 @@ export default async function Api(req, res) {
         let newUrls = {}
         uploadedFontFileData.filter(o => !!o).forEach(obj => {
           const type = Object.keys(obj)[0]
-          // newUrls[type] = path.join(config.server.HOST, obj[type])
           newUrls[type] = `${config.server.HOST}/file/s3/${obj[type]}`
         })
 

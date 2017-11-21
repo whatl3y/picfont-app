@@ -5,6 +5,10 @@ export default {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ pictures: pictureAry })
     })
+
+    if (!response.ok)
+      throw Error(response.statusText)
+
     return response.json()
   }
 }
